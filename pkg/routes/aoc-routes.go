@@ -12,6 +12,7 @@ var RegisterAocRoutes = func(router *mux.Router) {
 	router.HandleFunc("/day/", controllers.Day1).Methods("POST")
 	router.HandleFunc("/day/", controllers.GetForm).Methods("GET")
 	// router.HandleFunc("/day/{id}")
+	router.HandleFunc("/", controllers.MakeIndex)
 	router.Handle("/", http.FileServer(http.Dir("./static/")))
 	fmt.Printf("starting server at port 80")
 }
